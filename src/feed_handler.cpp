@@ -122,8 +122,8 @@ void network_thread_fn() {
                     sequencer.process_tick(tcp_tick, now);
                     tcp_total_received = 0;
                 }
-            } else if (r == 0) {
-                break; // Publisher disconnected
+            } else if (r == 0 || (r == SOCKET_ERROR && WSAGetLastError() != WSAEWOULDBLOCK)) {
+                break; // Publisher disconnected or error
             }
         }
 

@@ -39,9 +39,7 @@ def main():
     plt.ylabel('Price')
     plt.grid(True)
     
-    output_img = 'market_data_plot.png'
-    plt.savefig(output_img, dpi=150)
-    print(f"Plot saved successfully to {output_img}!")
+    plt.show()
 
 if __name__ == '__main__':
     main()
