@@ -142,6 +142,32 @@ execution_engine/fast:
 .PHONY : execution_engine/fast
 
 #=============================================================================
+# Target rules for targets named feed_publisher
+
+# Build rule for target.
+feed_publisher: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 feed_publisher
+.PHONY : feed_publisher
+
+# fast build rule for target.
+feed_publisher/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feed_publisher.dir\build.make CMakeFiles/feed_publisher.dir/build
+.PHONY : feed_publisher/fast
+
+#=============================================================================
+# Target rules for targets named feed_handler
+
+# Build rule for target.
+feed_handler: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 feed_handler
+.PHONY : feed_handler
+
+# fast build rule for target.
+feed_handler/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feed_handler.dir\build.make CMakeFiles/feed_handler.dir/build
+.PHONY : feed_handler/fast
+
+#=============================================================================
 # Target rules for targets named test_spsc_queue
 
 # Build rule for target.
@@ -153,6 +179,19 @@ test_spsc_queue: cmake_check_build_system
 test_spsc_queue/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_spsc_queue.dir\build.make CMakeFiles/test_spsc_queue.dir/build
 .PHONY : test_spsc_queue/fast
+
+#=============================================================================
+# Target rules for targets named test_feed_handler
+
+# Build rule for target.
+test_feed_handler: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 test_feed_handler
+.PHONY : test_feed_handler
+
+# fast build rule for target.
+test_feed_handler/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_feed_handler.dir\build.make CMakeFiles/test_feed_handler.dir/build
+.PHONY : test_feed_handler/fast
 
 src/execution_engine.obj: src/execution_engine.cpp.obj
 .PHONY : src/execution_engine.obj
@@ -178,6 +217,54 @@ src/execution_engine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\execution_engine.dir\build.make CMakeFiles/execution_engine.dir/src/execution_engine.cpp.s
 .PHONY : src/execution_engine.cpp.s
 
+src/feed_handler.obj: src/feed_handler.cpp.obj
+.PHONY : src/feed_handler.obj
+
+# target to build an object file
+src/feed_handler.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feed_handler.dir\build.make CMakeFiles/feed_handler.dir/src/feed_handler.cpp.obj
+.PHONY : src/feed_handler.cpp.obj
+
+src/feed_handler.i: src/feed_handler.cpp.i
+.PHONY : src/feed_handler.i
+
+# target to preprocess a source file
+src/feed_handler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feed_handler.dir\build.make CMakeFiles/feed_handler.dir/src/feed_handler.cpp.i
+.PHONY : src/feed_handler.cpp.i
+
+src/feed_handler.s: src/feed_handler.cpp.s
+.PHONY : src/feed_handler.s
+
+# target to generate assembly for a file
+src/feed_handler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feed_handler.dir\build.make CMakeFiles/feed_handler.dir/src/feed_handler.cpp.s
+.PHONY : src/feed_handler.cpp.s
+
+src/feed_publisher.obj: src/feed_publisher.cpp.obj
+.PHONY : src/feed_publisher.obj
+
+# target to build an object file
+src/feed_publisher.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feed_publisher.dir\build.make CMakeFiles/feed_publisher.dir/src/feed_publisher.cpp.obj
+.PHONY : src/feed_publisher.cpp.obj
+
+src/feed_publisher.i: src/feed_publisher.cpp.i
+.PHONY : src/feed_publisher.i
+
+# target to preprocess a source file
+src/feed_publisher.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feed_publisher.dir\build.make CMakeFiles/feed_publisher.dir/src/feed_publisher.cpp.i
+.PHONY : src/feed_publisher.cpp.i
+
+src/feed_publisher.s: src/feed_publisher.cpp.s
+.PHONY : src/feed_publisher.s
+
+# target to generate assembly for a file
+src/feed_publisher.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feed_publisher.dir\build.make CMakeFiles/feed_publisher.dir/src/feed_publisher.cpp.s
+.PHONY : src/feed_publisher.cpp.s
+
 src/market_data_generator.obj: src/market_data_generator.cpp.obj
 .PHONY : src/market_data_generator.obj
 
@@ -201,6 +288,30 @@ src/market_data_generator.s: src/market_data_generator.cpp.s
 src/market_data_generator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\market_data_generator.dir\build.make CMakeFiles/market_data_generator.dir/src/market_data_generator.cpp.s
 .PHONY : src/market_data_generator.cpp.s
+
+tests/test_feed_handler.obj: tests/test_feed_handler.cpp.obj
+.PHONY : tests/test_feed_handler.obj
+
+# target to build an object file
+tests/test_feed_handler.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_feed_handler.dir\build.make CMakeFiles/test_feed_handler.dir/tests/test_feed_handler.cpp.obj
+.PHONY : tests/test_feed_handler.cpp.obj
+
+tests/test_feed_handler.i: tests/test_feed_handler.cpp.i
+.PHONY : tests/test_feed_handler.i
+
+# target to preprocess a source file
+tests/test_feed_handler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_feed_handler.dir\build.make CMakeFiles/test_feed_handler.dir/tests/test_feed_handler.cpp.i
+.PHONY : tests/test_feed_handler.cpp.i
+
+tests/test_feed_handler.s: tests/test_feed_handler.cpp.s
+.PHONY : tests/test_feed_handler.s
+
+# target to generate assembly for a file
+tests/test_feed_handler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_feed_handler.dir\build.make CMakeFiles/test_feed_handler.dir/tests/test_feed_handler.cpp.s
+.PHONY : tests/test_feed_handler.cpp.s
 
 tests/test_spsc_queue.obj: tests/test_spsc_queue.cpp.obj
 .PHONY : tests/test_spsc_queue.obj
@@ -235,14 +346,26 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... execution_engine
+	@echo ... feed_handler
+	@echo ... feed_publisher
 	@echo ... market_data_generator
+	@echo ... test_feed_handler
 	@echo ... test_spsc_queue
 	@echo ... src/execution_engine.obj
 	@echo ... src/execution_engine.i
 	@echo ... src/execution_engine.s
+	@echo ... src/feed_handler.obj
+	@echo ... src/feed_handler.i
+	@echo ... src/feed_handler.s
+	@echo ... src/feed_publisher.obj
+	@echo ... src/feed_publisher.i
+	@echo ... src/feed_publisher.s
 	@echo ... src/market_data_generator.obj
 	@echo ... src/market_data_generator.i
 	@echo ... src/market_data_generator.s
+	@echo ... tests/test_feed_handler.obj
+	@echo ... tests/test_feed_handler.i
+	@echo ... tests/test_feed_handler.s
 	@echo ... tests/test_spsc_queue.obj
 	@echo ... tests/test_spsc_queue.i
 	@echo ... tests/test_spsc_queue.s

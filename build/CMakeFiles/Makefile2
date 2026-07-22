@@ -64,13 +64,19 @@ CMAKE_BINARY_DIR = C:\Users\abhis\OneDrive\Desktop\trading-pipeline\build
 # The main recursive "all" target.
 all: CMakeFiles/market_data_generator.dir/all
 all: CMakeFiles/execution_engine.dir/all
+all: CMakeFiles/feed_publisher.dir/all
+all: CMakeFiles/feed_handler.dir/all
 all: CMakeFiles/test_spsc_queue.dir/all
+all: CMakeFiles/test_feed_handler.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
 codegen: CMakeFiles/market_data_generator.dir/codegen
 codegen: CMakeFiles/execution_engine.dir/codegen
+codegen: CMakeFiles/feed_publisher.dir/codegen
+codegen: CMakeFiles/feed_handler.dir/codegen
 codegen: CMakeFiles/test_spsc_queue.dir/codegen
+codegen: CMakeFiles/test_feed_handler.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -80,7 +86,10 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/market_data_generator.dir/clean
 clean: CMakeFiles/execution_engine.dir/clean
+clean: CMakeFiles/feed_publisher.dir/clean
+clean: CMakeFiles/feed_handler.dir/clean
 clean: CMakeFiles/test_spsc_queue.dir/clean
+clean: CMakeFiles/test_feed_handler.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -90,7 +99,7 @@ clean: CMakeFiles/test_spsc_queue.dir/clean
 CMakeFiles/market_data_generator.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\market_data_generator.dir\build.make CMakeFiles/market_data_generator.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\market_data_generator.dir\build.make CMakeFiles/market_data_generator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\abhis\OneDrive\Desktop\trading-pipeline\build\CMakeFiles --progress-num=3,4 "Built target market_data_generator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\abhis\OneDrive\Desktop\trading-pipeline\build\CMakeFiles --progress-num=7,8 "Built target market_data_generator"
 .PHONY : CMakeFiles/market_data_generator.dir/all
 
 # Build rule for subdir invocation for target.
@@ -107,7 +116,7 @@ market_data_generator: CMakeFiles/market_data_generator.dir/rule
 # codegen rule for target.
 CMakeFiles/market_data_generator.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\market_data_generator.dir\build.make CMakeFiles/market_data_generator.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\abhis\OneDrive\Desktop\trading-pipeline\build\CMakeFiles --progress-num=3,4 "Finished codegen for target market_data_generator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\abhis\OneDrive\Desktop\trading-pipeline\build\CMakeFiles --progress-num=7,8 "Finished codegen for target market_data_generator"
 .PHONY : CMakeFiles/market_data_generator.dir/codegen
 
 # clean rule for target.
@@ -148,13 +157,77 @@ CMakeFiles/execution_engine.dir/clean:
 .PHONY : CMakeFiles/execution_engine.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/feed_publisher.dir
+
+# All Build rule for target.
+CMakeFiles/feed_publisher.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feed_publisher.dir\build.make CMakeFiles/feed_publisher.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feed_publisher.dir\build.make CMakeFiles/feed_publisher.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\abhis\OneDrive\Desktop\trading-pipeline\build\CMakeFiles --progress-num=5,6 "Built target feed_publisher"
+.PHONY : CMakeFiles/feed_publisher.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/feed_publisher.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\abhis\OneDrive\Desktop\trading-pipeline\build\CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/feed_publisher.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\abhis\OneDrive\Desktop\trading-pipeline\build\CMakeFiles 0
+.PHONY : CMakeFiles/feed_publisher.dir/rule
+
+# Convenience name for target.
+feed_publisher: CMakeFiles/feed_publisher.dir/rule
+.PHONY : feed_publisher
+
+# codegen rule for target.
+CMakeFiles/feed_publisher.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feed_publisher.dir\build.make CMakeFiles/feed_publisher.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\abhis\OneDrive\Desktop\trading-pipeline\build\CMakeFiles --progress-num=5,6 "Finished codegen for target feed_publisher"
+.PHONY : CMakeFiles/feed_publisher.dir/codegen
+
+# clean rule for target.
+CMakeFiles/feed_publisher.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feed_publisher.dir\build.make CMakeFiles/feed_publisher.dir/clean
+.PHONY : CMakeFiles/feed_publisher.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/feed_handler.dir
+
+# All Build rule for target.
+CMakeFiles/feed_handler.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feed_handler.dir\build.make CMakeFiles/feed_handler.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feed_handler.dir\build.make CMakeFiles/feed_handler.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\abhis\OneDrive\Desktop\trading-pipeline\build\CMakeFiles --progress-num=3,4 "Built target feed_handler"
+.PHONY : CMakeFiles/feed_handler.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/feed_handler.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\abhis\OneDrive\Desktop\trading-pipeline\build\CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/feed_handler.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\abhis\OneDrive\Desktop\trading-pipeline\build\CMakeFiles 0
+.PHONY : CMakeFiles/feed_handler.dir/rule
+
+# Convenience name for target.
+feed_handler: CMakeFiles/feed_handler.dir/rule
+.PHONY : feed_handler
+
+# codegen rule for target.
+CMakeFiles/feed_handler.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feed_handler.dir\build.make CMakeFiles/feed_handler.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\abhis\OneDrive\Desktop\trading-pipeline\build\CMakeFiles --progress-num=3,4 "Finished codegen for target feed_handler"
+.PHONY : CMakeFiles/feed_handler.dir/codegen
+
+# clean rule for target.
+CMakeFiles/feed_handler.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feed_handler.dir\build.make CMakeFiles/feed_handler.dir/clean
+.PHONY : CMakeFiles/feed_handler.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/test_spsc_queue.dir
 
 # All Build rule for target.
 CMakeFiles/test_spsc_queue.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_spsc_queue.dir\build.make CMakeFiles/test_spsc_queue.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_spsc_queue.dir\build.make CMakeFiles/test_spsc_queue.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\abhis\OneDrive\Desktop\trading-pipeline\build\CMakeFiles --progress-num=5,6 "Built target test_spsc_queue"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\abhis\OneDrive\Desktop\trading-pipeline\build\CMakeFiles --progress-num=11,12 "Built target test_spsc_queue"
 .PHONY : CMakeFiles/test_spsc_queue.dir/all
 
 # Build rule for subdir invocation for target.
@@ -171,13 +244,45 @@ test_spsc_queue: CMakeFiles/test_spsc_queue.dir/rule
 # codegen rule for target.
 CMakeFiles/test_spsc_queue.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_spsc_queue.dir\build.make CMakeFiles/test_spsc_queue.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\abhis\OneDrive\Desktop\trading-pipeline\build\CMakeFiles --progress-num=5,6 "Finished codegen for target test_spsc_queue"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\abhis\OneDrive\Desktop\trading-pipeline\build\CMakeFiles --progress-num=11,12 "Finished codegen for target test_spsc_queue"
 .PHONY : CMakeFiles/test_spsc_queue.dir/codegen
 
 # clean rule for target.
 CMakeFiles/test_spsc_queue.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_spsc_queue.dir\build.make CMakeFiles/test_spsc_queue.dir/clean
 .PHONY : CMakeFiles/test_spsc_queue.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_feed_handler.dir
+
+# All Build rule for target.
+CMakeFiles/test_feed_handler.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_feed_handler.dir\build.make CMakeFiles/test_feed_handler.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_feed_handler.dir\build.make CMakeFiles/test_feed_handler.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\abhis\OneDrive\Desktop\trading-pipeline\build\CMakeFiles --progress-num=9,10 "Built target test_feed_handler"
+.PHONY : CMakeFiles/test_feed_handler.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_feed_handler.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\abhis\OneDrive\Desktop\trading-pipeline\build\CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/test_feed_handler.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\abhis\OneDrive\Desktop\trading-pipeline\build\CMakeFiles 0
+.PHONY : CMakeFiles/test_feed_handler.dir/rule
+
+# Convenience name for target.
+test_feed_handler: CMakeFiles/test_feed_handler.dir/rule
+.PHONY : test_feed_handler
+
+# codegen rule for target.
+CMakeFiles/test_feed_handler.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_feed_handler.dir\build.make CMakeFiles/test_feed_handler.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\abhis\OneDrive\Desktop\trading-pipeline\build\CMakeFiles --progress-num=9,10 "Finished codegen for target test_feed_handler"
+.PHONY : CMakeFiles/test_feed_handler.dir/codegen
+
+# clean rule for target.
+CMakeFiles/test_feed_handler.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_feed_handler.dir\build.make CMakeFiles/test_feed_handler.dir/clean
+.PHONY : CMakeFiles/test_feed_handler.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -1,5 +1,8 @@
 C:/Users/abhis/OneDrive/Desktop/trading-pipeline/build/CMakeFiles/market_data_generator.dir
 C:/Users/abhis/OneDrive/Desktop/trading-pipeline/build/CMakeFiles/execution_engine.dir
+C:/Users/abhis/OneDrive/Desktop/trading-pipeline/build/CMakeFiles/feed_publisher.dir
+C:/Users/abhis/OneDrive/Desktop/trading-pipeline/build/CMakeFiles/feed_handler.dir
 C:/Users/abhis/OneDrive/Desktop/trading-pipeline/build/CMakeFiles/test_spsc_queue.dir
+C:/Users/abhis/OneDrive/Desktop/trading-pipeline/build/CMakeFiles/test_feed_handler.dir
 C:/Users/abhis/OneDrive/Desktop/trading-pipeline/build/CMakeFiles/edit_cache.dir
 C:/Users/abhis/OneDrive/Desktop/trading-pipeline/build/CMakeFiles/rebuild_cache.dir

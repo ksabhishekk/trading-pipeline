@@ -97,3 +97,20 @@ strict FIFO order with zero drops or duplicates.
   strategy.
 - Correctness testing here is a hand-rolled assert-based test; would prefer
   Google Test in a longer-lived project for better reporting/CI integration.
+
+## Market Data Feed Handler
+
+The project now includes a simulated UDP market data feed publisher (`feed_publisher`) and subscriber (`feed_handler`), implementing sequence gap detection and recovery mechanisms.
+
+### Why UDP for Market Data and TCP for Control?
+- **UDP (User Datagram Protocol)** is used for the market data feed because it has lower overhead, supports multicast (sending to many clients at once), and doesn't require the exchange to maintain connection state for thousands of subscribers. However, UDP provides **no delivery guarantees** — packets can be dropped or arrive out of order.
+- **TCP (Transmission Control Protocol)** is used for the retransmission request channel because **reliability is required** here. When a client detects a gap, it sends a control request for specific sequence numbers. The exchange must guarantee the delivery of these missed ticks, making TCP the appropriate choice for this out-of-band request/response flow.
+
+### Gap Detection and Recovery Architecture
+1. **Publisher Replay Buffer**: The `feed_publisher` maintains a bounded circular buffer (e.g., the last 16,384 ticks). It cannot store infinite history; real exchanges also limit replay availability (often capping it to the current day or a recent time window).
+2. **Subscriber Gap Detection**: The `feed_handler` expects monotonically increasing sequence numbers. If an early sequence arrives (e.g., expected 5, received 7), it stores tick 7 in a **reorder buffer**, marks 5 and 6 as missing, and sends a TCP request to the publisher to resend the gap.
+3. **Recovery Timeout**: The subscriber implements a bounded wait time (e.g., 50ms) for missed packets. If the missing packets are not recovered within this window, they are considered an "unrecoverable gap". The subscriber logs the missing sequence, increments its expected sequence number, flushes any queued out-of-order packets, and moves on. This ensures the system does not block forever on a permanently dropped packet.
+
+### Known Limitations / Production Differences
+- **Unicast vs Multicast**: This simulation uses unicast UDP (`127.0.0.1`) for simplicity. A production environment uses UDP Multicast (e.g., IGMP) allowing many machines to subscribe to a single stream without burdening the publisher network stack.
+- **Standard Protocols**: We use a custom packed `Tick` struct. Real exchanges use vendor-specific binary protocols like ITCH, OUCH, or standard protocols like FIX/FAST.
