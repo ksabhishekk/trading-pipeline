@@ -128,6 +128,7 @@ int main() {
 
     std::mt19937 rng(42);
     std::uniform_real_distribution<double> dist(0.0, 1.0);
+    std::normal_distribution<double> price_dist(0.0, 0.05); // Mean 0, stddev 0.05
 
     double price = 100.0;
     std::vector<Tick> delayed_queue;
@@ -136,7 +137,8 @@ int main() {
         Tick tick{};
         tick.seq = i;
         tick.symbol_id = 1;
-        price += ((i % 7 == 0) ? 0.05 : -0.02);
+        price += price_dist(rng);
+        if (price < 1.0) price = 1.0;
         tick.price = price;
         tick.gen_timestamp_ns = LatencyProfiler::now_ns();
 
